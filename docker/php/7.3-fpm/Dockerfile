@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
+    libpq-dev \
     curl
 
 # Clear cache
@@ -29,8 +30,10 @@ RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --wi
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mysqli
-RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pcntl
+
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
+RUN docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Customize php.ini
 COPY ./local.ini /usr/local/etc/php/conf.d/local.ini
