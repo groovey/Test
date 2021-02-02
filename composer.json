@@ -1,0 +1,18 @@
+{
+    "name": "groovey/tester",
+    "type": "project",
+    "description": "The Code Incubator",
+    "keywords": [
+        "php",
+        "tester"
+    ],
+    "license": "MIT",
+    "require": {
+        "monolog/monolog": "^2.2",
+        "psr/log": "^1.1",
+        "guzzlehttp/guzzle": "^7.2",
+        "phpunit/phpunit": "^9.5",
+        "vlucas/phpdotenv": "^5.3",
+        "fakerphp/faker": "^1.13"
+    }
+}
