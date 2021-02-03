@@ -6,3 +6,18 @@ print "Hello World";
 // $db = pg_connect($conn);
 
 // print_r($db);
+
+require 'vendor/autoload.php';
+
+use App\Services\DB;
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$key = getenv('APP_KEY');
+
+print "<br/> key = $key";
+
+
+$db = new DB();
+$db->getConnection();
