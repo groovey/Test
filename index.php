@@ -1,23 +1,15 @@
 <?php
 
-print "Hello World";
-
-// $conn = "host=192.168.99.101 port=5432 dbname=test user=postgres password=webdevel";
-// $db = pg_connect($conn);
-
-// print_r($db);
-
 require 'vendor/autoload.php';
 
-use App\Services\DB;
+use Dotenv\Dotenv;
+use Symfony\Component\HttpFoundation\Request;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$key = getenv('APP_KEY');
+$request = Request::createFromGlobals();
 
-print "<br/> key = $key";
+include_once 'bootstrap/app.php';
 
-
-$db = new DB();
-$db->getConnection();
+return;
