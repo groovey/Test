@@ -28,7 +28,7 @@ class Customer extends Model
      */
     public function find($id)
     {
-        $q = "SELECT * FROM customers WHERE customer_id = $id LIMIT 1";
+        $q = "SELECT * FROM customers WHERE customer_id = '$id' LIMIT 1";
         $data = $this->fetch($q);
         return $data;
     }
