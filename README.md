@@ -53,7 +53,20 @@ You can download my postgres repository on : https://github.com/groovey/docker-c
 ### Finally Heroku
 
 
+### What has been done?
 
+There is no framework that has been used here. Instead I created a simple Crud API framework. 
+The code comes with MVC structure.
+Simple enough to create routes under ./routes/api.php
+Use symfony components via composer and other packagist
+Coding standard to PSR
+Ready for ESlint for javascript, using (https://standardjs.com/)
+Added autoloading and namespacing
+Code is has been run on `$ php-cs-fixer`
+
+### Questions and clarification?
+
+Feel free to contact me on my github. 
 
 
 

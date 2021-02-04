@@ -69,7 +69,6 @@ class CustomerController
         return $response->send($data);
     }
 
-
     /**
     * Update customer record
     * Note:: use PUT action on postman
@@ -89,7 +88,6 @@ class CustomerController
 
         return $response->send($data);
     }
-
 
     /**
     * Delete customer record
