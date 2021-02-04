@@ -6,6 +6,10 @@ use Dotenv\Dotenv;
 use App\Services\DB;
 use Symfony\Component\HttpFoundation\Request;
 
+$password = getenv('DB_PASSWORD');
+print $password;
+
+
 // use Dotenv\Exception\InvalidPathException;
 
 // Load all the .env variables
