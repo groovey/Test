@@ -46,6 +46,8 @@ Phpinfo version
 
 ### Heroku API DETAILS:
 
+* Play around with the values like the id and names.
+
 * Get all customers records:
 `GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers`
 
