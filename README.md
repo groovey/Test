@@ -46,8 +46,20 @@ Phpinfo version
 
 ### Heroku API DETAILS:
 
+* Get all customers records:
+`GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers`
 
+* Get a single customer record base on ID
+`GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers/find?id=1`
 
+* Create a customer record
+`POST --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=sample`
+
+* Updating a customer record base on id
+`PUT --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=updated_sample&id=9`
+
+* Deleting a customer record base on id
+`DELETE --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?id=9`
 
 
 ### What has been done?
