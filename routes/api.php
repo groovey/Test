@@ -10,7 +10,6 @@ $router->post('/api/v1/customers', [CustomerController::class, 'create']);
 $router->put('/api/v1/customers', [CustomerController::class, 'update']);
 $router->delete('/api/v1/customers', [CustomerController::class, 'delete']);
 
-
 $router->mount();
 
 return $router;

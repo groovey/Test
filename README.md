@@ -8,16 +8,16 @@
 `GET --> http://tester.test/api/v1/customers`
 
 * Get a single customer record base on ID
-`GET --> http://tester.test/api/v1/customers/find?customer_id=1`
+`GET --> http://tester.test/api/v1/customers/find?id=1`
 
 * Create a customer record
-`POST --> http://tester.test/api/v1/customers?contact_name=sample`
+`POST --> http://tester.test/api/v1/customers?name=sample`
 
 * Updating a customer record base on id
-`PUT --> http://tester.test/api/v1/customers?contact_name=updated_sample&customer_id=9`
+`PUT --> http://tester.test/api/v1/customers?name=updated_sample&id=9`
 
 * Deleting a customer record base on id
-`DELETE --> http://tester.test/api/v1/customers?customer_id=9`
+`DELETE --> http://tester.test/api/v1/customers?id=9`
 
 
 ### If you want to install locally:
@@ -43,6 +43,12 @@ Testing out the database connection via env variables
 
 Phpinfo version
 - https://cartrack-api.herokuapp.com/phpinfo.php
+
+### Heroku API DETAILS:
+
+
+
+
 
 ### What has been done?
 

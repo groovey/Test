@@ -28,7 +28,7 @@ class Customer extends Model
      */
     public function find($id)
     {
-        $q = "SELECT * FROM customers WHERE id = $id LIMIT 1";
+        $q = "SELECT * FROM customers WHERE customer_id = $id LIMIT 1";
         $data = $this->fetch($q);
         return $data;
     }
@@ -40,7 +40,7 @@ class Customer extends Model
     {
         $name = $data['name'];
 
-        $q = "INSERT INTO customers (name) VALUES ('$name')";
+        $q = "INSERT INTO customers (contact_name) VALUES ('$name')";
         $result = $this->query($q);
 
         $data =[];
@@ -59,7 +59,7 @@ class Customer extends Model
     {
         $name = $data['name'];
 
-        $q = "UPDATE customers SET name='$name' WHERE id = '$id' ";
+        $q = "UPDATE customers SET contact_name='$name' WHERE customer_id = '$id' ";
         $result = $this->query($q);
 
         $data =[];
@@ -77,7 +77,7 @@ class Customer extends Model
      */
     public function delete($id)
     {
-        $q = "DELETE FROM customers WHERE id = '$id' ";
+        $q = "DELETE FROM customers WHERE customer_id = '$id' ";
         $result = $this->query($q);
 
         $data =[];
