@@ -10,11 +10,14 @@ use Symfony\Component\HttpFoundation\Request;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+die('Dont env working?');
+
+
 // Create the http request
 $request = Request::createFromGlobals();
 
 
-die('request working');
+
 
 // Connect to postgres datababase
 $db = (new DB())->getConnection();
