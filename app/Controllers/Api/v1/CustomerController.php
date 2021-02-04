@@ -49,4 +49,61 @@ class CustomerController
 
         return $response->send($data);
     }
+
+    /**
+    * Insert customer record
+    * Note:: use POST action on postman
+    * ex. http://tester.test/api/v1/customers?name=sample
+    */
+    public function create()
+    {
+        $request  = $this->request;
+        $response = $this->response;
+        $customer = $this->customer;
+        $name     = $request->get('name');
+
+        $data = $customer->create([
+            'name' => $name
+        ]);
+
+        return $response->send($data);
+    }
+
+
+    /**
+    * Update customer record
+    * Note:: use PUT action on postman
+    * ex. http://tester.test/api/v1/customers?name=updated_sample&id=9
+    */
+    public function update()
+    {
+        $request  = $this->request;
+        $response = $this->response;
+        $customer = $this->customer;
+        $id       = $request->get('id');
+        $name     = $request->get('name');
+
+        $data = $customer->update($id, [
+            'name' => $name
+        ]);
+
+        return $response->send($data);
+    }
+
+
+    /**
+    * Delete customer record
+    * Note:: use DELETE action on postman
+    * ex. http://tester.test/api/v1/customers?id=9
+    */
+    public function delete()
+    {
+        $request  = $this->request;
+        $response = $this->response;
+        $customer = $this->customer;
+        $id       = $request->get('id');
+        $data     = $customer->delete($id);
+
+        return $response->send($data);
+    }
 }

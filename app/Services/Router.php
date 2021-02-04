@@ -26,6 +26,14 @@ class Router
     }
 
     /**
+    *  Set route as POST
+    */
+    public function post($uri, $callback)
+    {
+        $this->add('POST', $uri, $callback);
+    }
+
+    /**
      *  Set route as PUT
      */
     public function put($uri, $callback)

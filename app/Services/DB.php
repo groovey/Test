@@ -44,11 +44,11 @@ class DB
     {
         return $this->conn;
     }
-    
+
     /**
-     * Fetch associate data array
-     */
-    public function fetch($query)
+    * Executes query syntax
+    */
+    public function query($query)
     {
         $result = pg_query($this->conn, $query);
         if (!$result) {
@@ -56,7 +56,16 @@ class DB
             die();
         }
         
-        $data = [];
+        return $result;
+    }
+    
+    /**
+     * Fetch associate data array
+     */
+    public function fetch($query)
+    {
+        $data   = [];
+        $result = $this->query($query);
 
         while ($row = pg_fetch_assoc($result)) {
             $data[] = $row;
