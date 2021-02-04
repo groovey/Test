@@ -61,9 +61,12 @@ class CustomerController
         $response = $this->response;
         $customer = $this->customer;
         $name     = $request->get('name');
+        $rand     = rand();
 
         $data = $customer->create([
-            'name' => $name
+            'id'      => $rand,
+            'name'    => $name,
+            'company' => $rand,
         ]);
 
         return $response->send($data);

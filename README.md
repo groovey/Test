@@ -50,7 +50,7 @@ Phpinfo version
 `GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers`
 
 * Get a single customer record base on ID
-`GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers/find?id=1`
+`GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers/find?id=002`
 
 * Create a customer record
 `POST --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=sample`

@@ -38,9 +38,11 @@ class Customer extends Model
      */
     public function create($data)
     {
-        $name = $data['name'];
+        $id      = $data['id'];
+        $name    = $data['name'];
+        $company = $data['company'];
 
-        $q = "INSERT INTO customers (contact_name) VALUES ('$name')";
+        $q = "INSERT INTO customers (customer_id, contact_name, company_name) VALUES ('$id', '$name', '$company')";
         $result = $this->query($q);
 
         $data =[];
