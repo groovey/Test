@@ -24,16 +24,15 @@
 
 * Set up database (customers table)
 * Set environment variables.
-- Copy .env.example on the folder to .env
-- Replace the .env variables with your postgres values
-
+* Copy .env.example on the folder to .env
+* Replace the .env variables with your postgres values
 * Make sure you have composer and a php that is at least 7.3.
 
 ### If you want to run it via Docker
 
-Run `$ docker-compose up -d`, you need a separate db. 
-
-You can download my postgres repository on : https://github.com/groovey/docker-common
+* Run `$ docker-compose up -d`, 
+* You need a separate db. 
+* You can download my postgres repository on : https://github.com/groovey/docker-common
 
 
 ### Finally Heroku
@@ -49,7 +48,7 @@ You can download my postgres repository on : https://github.com/groovey/docker-c
 * Coding standard to PSR
 * Ready for ESlint for javascript, using (https://standardjs.com/)
 * Added autoloading and namespacing
-* Code is has been run on `$ php-cs-fixer`
+* Code has been run on `$ php-cs-fixer`
 
 ### Questions and clarification?
 
