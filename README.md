@@ -34,10 +34,15 @@
 * You need a separate db. 
 * You can download my postgres repository on : https://github.com/groovey/docker-common
 
-
 ### Finally Heroku
 
 - https://cartrack-api.herokuapp.com/
+
+Testing out the database connection via env variables
+- https://cartrack-api.herokuapp.com/checker.php
+
+Phpinfo version
+- https://cartrack-api.herokuapp.com/phpinfo.php
 
 ### What has been done?
 
