@@ -6,15 +6,15 @@ use Dotenv\Dotenv;
 use App\Services\DB;
 use Symfony\Component\HttpFoundation\Request;
 
-die('Test heroku upload');
-
-
 // Load all the .env variables
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // Create the http request
 $request = Request::createFromGlobals();
+
+
+die('request working');
 
 // Connect to postgres datababase
 $db = (new DB())->getConnection();
