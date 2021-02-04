@@ -17,8 +17,6 @@ die('Dont env working?');
 $request = Request::createFromGlobals();
 
 
-
-
 // Connect to postgres datababase
 $db = (new DB())->getConnection();
 

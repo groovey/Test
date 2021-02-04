@@ -8,35 +8,21 @@
 `GET --> http://tester.test/api/v1/customers`
 
 * Get a single customer record base on ID
-`GET --> http://tester.test/api/v1/customers/find?id=1`
+`GET --> http://tester.test/api/v1/customers/find?customer_id=1`
 
 * Create a customer record
-`POST --> http://tester.test/api/v1/customers?name=sample`
+`POST --> http://tester.test/api/v1/customers?contact_name=sample`
 
 * Updating a customer record base on id
-`PUT --> http://tester.test/api/v1/customers?name=updated_sample&id=9`
+`PUT --> http://tester.test/api/v1/customers?contact_name=updated_sample&customer_id=9`
 
 * Deleting a customer record base on id
-`DELETE --> http://tester.test/api/v1/customers?id=9`
+`DELETE --> http://tester.test/api/v1/customers?customer_id=9`
 
 
 ### If you want to install locally:
 
-* Set up database
-
-```mysql
-    DROP TABLE IF EXISTS "customers";
-    DROP SEQUENCE IF EXISTS customers_id_seq;
-    CREATE SEQUENCE customers_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
-
-    CREATE TABLE "public"."customers" (
-        "id" integer DEFAULT nextval('customers_id_seq') NOT NULL,
-        "name" character varying NOT NULL
-    ) WITH (oids = false);
-
-    INSERT INTO "customers" ("id", "name") VALUES (1,	'one'), (2,	'two');
-```
-
+* Set up database (customers table)
 * Set environment variables.
 - Copy .env.example on the folder to .env
 - Replace the .env variables with your postgres values
@@ -52,23 +38,19 @@ You can download my postgres repository on : https://github.com/groovey/docker-c
 
 ### Finally Heroku
 
+- https://cartrack-api.herokuapp.com/
 
 ### What has been done?
 
-There is no framework that has been used here. Instead I created a simple Crud API framework. 
-The code comes with MVC structure.
-Simple enough to create routes under ./routes/api.php
-Use symfony components via composer and other packagist
-Coding standard to PSR
-Ready for ESlint for javascript, using (https://standardjs.com/)
-Added autoloading and namespacing
-Code is has been run on `$ php-cs-fixer`
+* There is no framework that has been used here. Instead I created a simple Crud API framework. 
+* The code comes with MVC structure.
+* Simple enough to create routes under ./routes/api.php
+* Use symfony components via composer and other packagist
+* Coding standard to PSR
+* Ready for ESlint for javascript, using (https://standardjs.com/)
+* Added autoloading and namespacing
+* Code is has been run on `$ php-cs-fixer`
 
 ### Questions and clarification?
 
 Feel free to contact me on my github. 
-
-
-
-
-

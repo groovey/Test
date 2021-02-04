@@ -1,7 +1,12 @@
 {
     "name": "groovey/tester",
     "type": "project",
-    "description": "The Code Incubator",
+    "description": "The Code Incubator",    
+    "config": {
+        "platform": {
+            "php": "7.3.26"
+        }
+    },
     "keywords": [
         "php",
         "tester"
