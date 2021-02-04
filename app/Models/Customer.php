@@ -48,7 +48,7 @@ class Customer extends Model
         $data =[];
         if ($result == true) {
             $data = [
-                'message' => "Succefully inserted record. $q"
+                'message' => "Succefully inserted record."
             ];
         }
         return $data;
@@ -67,7 +67,7 @@ class Customer extends Model
         $data =[];
         if ($result == true) {
             $data = [
-                'message' => "Succefully updated record: $q"
+                'message' => "Succefully updated record."
             ];
         }
         return $data;
@@ -85,7 +85,7 @@ class Customer extends Model
         $data =[];
         if ($result == true) {
             $data = [
-                'message' => "Succefully deleted record: $q"
+                'message' => "Succefully deleted record."
             ];
         }
         return $data;
