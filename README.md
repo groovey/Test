@@ -53,10 +53,10 @@ Phpinfo version
 `GET --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers/find?id=002`
 
 * Create a customer record
-`POST --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=sample`
+`POST --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=Harold Kim
 
 * Updating a customer record base on id
-`PUT --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=updated_sample&id=9`
+`PUT --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?name=Harold Test&id=239584433`
 
 * Deleting a customer record base on id
 `DELETE --> https://cartrack-api.herokuapp.com/index.php/api/v1/customers?id=9`
