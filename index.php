@@ -5,11 +5,12 @@ require 'vendor/autoload.php';
 use Dotenv\Dotenv;
 use App\Services\DB;
 use Symfony\Component\HttpFoundation\Request;
-use Dotenv\Exception\InvalidPathException;
+
+// use Dotenv\Exception\InvalidPathException;
 
 // Load all the .env variables
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+// $dotenv = Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
 
 // try {
 //     $dotenv = Dotenv::create(__DIR__);
