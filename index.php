@@ -8,20 +8,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Dotenv\Exception\InvalidPathException;
 
 // Load all the .env variables
-// $dotenv = Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-try {
-    $dotenv = Dotenv::create(__DIR__);
-    $dotenv->load();
-} catch (InvalidPathException $e) {
-    // Do something
+// try {
+//     $dotenv = Dotenv::create(__DIR__);
+//     $dotenv->load();
+// } catch (InvalidPathException $e) {
+//     // Do something
 
-    die('grrr');
-}
+//     die('grrr');
+// }
 
 
-die('Dont env working?');
+die('Dot env working?');
 
 
 // Create the http request
