@@ -2,15 +2,24 @@
 
 namespace App\Services;
 
+/**
+ * Postgres sql wrapper class
+ */
 class DB
 {
-    private $conn;
+    public $conn;
 
+    /**
+     * Constructor to connect to db
+     */
     public function __construct()
     {
         $this->connect();
     }
 
+    /**
+     * Connect to the database via env variables
+     */
     public function connect()
     {
         $host     = getenv('DB_HOST');
@@ -21,14 +30,38 @@ class DB
         
         try {
             $conn = "host=$host port=$port dbname=$database user=$username password=$password";
-            return $this->conn = pg_connect($conn);
+            $this->conn = pg_connect($conn);
+            return $this->db;
         } catch (\Exception $e) {
             exit($e->getMessage());
         }
     }
 
+    /**
+     * Gets the current connection resource
+     */
     public function getConnection()
     {
         return $this->conn;
+    }
+    
+    /**
+     * Fetch associate data array
+     */
+    public function fetch($query)
+    {
+        $result = pg_query($this->conn, $query);
+        if (!$result) {
+            print "Something is wrong with the query: $query";
+            die();
+        }
+        
+        $data = [];
+
+        while ($row = pg_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+
+        return $data;
     }
 }

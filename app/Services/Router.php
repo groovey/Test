@@ -4,6 +4,9 @@ namespace App\Services;
 
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Router logic for handling of API's
+ */
 class Router
 {
     public $routes;
@@ -13,12 +16,42 @@ class Router
     {
         $this->request = $request;
     }
-
+ 
+    /**
+     * Set route as GET
+     */
     public function get($uri, $callback)
     {
         $this->add('GET', $uri, $callback);
     }
 
+    /**
+     *  Set route as PUT
+     */
+    public function put($uri, $callback)
+    {
+        $this->add('PUT', $uri, $callback);
+    }
+
+    /**
+     * Set route as PATCH
+     */
+    public function patch($uri, $callback)
+    {
+        $this->add('PATCH', $uri, $callback);
+    }
+
+    /**
+     * Set route as DELETE
+     */
+    public function delete($uri, $callback)
+    {
+        $this->add('DELETE', $uri, $callback);
+    }
+
+    /**
+     * Adds the routes to an array
+     */
     private function add($method, $uri, $callback)
     {
         $this->routes[] = [
@@ -28,6 +61,9 @@ class Router
         ];
     }
 
+    /**
+     * Match a specific route
+     */
     private function search($method, $uri)
     {
         foreach ($this->routes as $route) {
@@ -36,9 +72,12 @@ class Router
             }
         }
 
-        die('Api not found.');
+        die('Page not found.');
     }
 
+    /**
+     * Calls the responsible class according to the defined parameters on the routes/api.php file
+     */
     public function mount()
     {
         $request     = $this->request;
@@ -47,8 +86,8 @@ class Router
         $route       = $this->search($method, $uri);
         $className   = $route['callback'][0];
         $classMethod = $route['callback'][1];
-
-        $func = "$className::$classMethod";
-        return $func();
+        
+        $class = new $className($request);
+        $class->$classMethod();
     }
 }

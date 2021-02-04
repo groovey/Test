@@ -3,13 +3,20 @@
 require 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
+use App\Services\DB;
 use Symfony\Component\HttpFoundation\Request;
 
+// Load all the .env variables
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+// Create the http request
 $request = Request::createFromGlobals();
 
-include_once 'bootstrap/app.php';
+// Connect to postgres datababase
+$db = (new DB())->getConnection();
+
+// Load all the api's router data
+include_once 'routes/api.php';
 
 return;
