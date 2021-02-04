@@ -6,6 +6,9 @@ use Dotenv\Dotenv;
 use App\Services\DB;
 use Symfony\Component\HttpFoundation\Request;
 
+die('Test heroku upload');
+
+
 // Load all the .env variables
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
